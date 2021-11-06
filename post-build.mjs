@@ -1,16 +1,17 @@
 // @ts-nocheck
-import path from 'path';
-import fs from 'fs-extra';
+import { join, basename } from 'path';
+import fsextra from 'fs-extra';
+const { lstatSync, copySync } = fsextra;
 
 const __dirname = process.cwd();
 const log = console.log; // () => {}; // console.log;
 
 (async () => {
-	for (const [src, dst] of ['.static', 'package.json'].map(fn => [
-		path.join(__dirname, fn),
-		path.join(__dirname, '.dist', fs.lstatSync(fn).isDirectory() ? '' : fn),
+	for (const [src, dst] of ['../../LICENSE', 'assets', 'package.json'].map(fn => [
+		join(__dirname, fn),
+		join(__dirname, 'dist', lstatSync(fn).isDirectory() ? '' : basename(fn)),
 	])) {
 		log(`Copying ${src} to ${dst}`);
-		log((fs.copySync(src, dst, { overwrite: true }) || {}).message || 'Done.');
+		log((copySync(src, dst, { overwrite: true }) || {}).message || 'Done.');
 	}
 })();

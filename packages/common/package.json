@@ -1,7 +1,7 @@
 {
 	"name": "@pauliojanpera/byte-codecs-common",
 	"productName": "Byte codecs (common)",
-	"version": "0.0.9",
+	"version": "0.0.12",
 	"description": "A library for building 8-bit byte based codecs",
 	"author": {
 		"name": "Pauli Ojanperä",
@@ -19,9 +19,9 @@
 		}
 	},
 	"scripts": {
-		"build": "rm -rf .dist ; pnpm update @pauliojanpera/* --depth 0 --latest --filter=${npm_package_name} ; pnpm version patch --no-git-tag-version && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ../../post-build.mjs && pnpm publish ./.dist --access public --no-git-checks",
+		"build": "rm -rf dist ; pnpm update @pauliojanpera/* --depth 0 --latest --filter=${npm_package_name} ; pnpm version patch --no-git-tag-version && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ../../post-build.mjs && pnpm publish ./dist --access public --no-git-checks",
 		"test": "NODE_OPTIONS=--experimental-vm-modules pnpm jest",
-		"pub": "pnpm version patch -m 'v%s' && pnpm publish ./.dist --registry http://registry.npmjs.org/ --access public --publish-branch master"
+		"pub": "pnpm version patch -m 'v%s' && pnpm publish ./dist --registry http://registry.npmjs.org/ --access public --publish-branch master"
 	},
 	"keywords": [
 		"byte",

@@ -11,7 +11,7 @@ export default rootDir =>
 			},
 		},
 		extensionsToTreatAsEsm: ['.ts'],
-		modulePathIgnorePatterns: ['.*/(.dist|.static|.verdaccio|node_modules)/.*'],
+		modulePathIgnorePatterns: ['.*/(dist|assets|.verdaccio|node_modules)/.*'],
 		testMatch: ['**/__tests__/**/*.[jt]s?(x)'],
 	});
 

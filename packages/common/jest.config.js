@@ -1,5 +1,5 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-module.exports = {
+export default {
 	preset: 'ts-jest',
 	testEnvironment: 'node',
 	transform: {},
@@ -9,4 +9,6 @@ module.exports = {
 		},
 	},
 	extensionsToTreatAsEsm: ['.ts'],
+	modulePathIgnorePatterns: [ "<rootDir>[/\\\\](dist|assets|node_modules)[/\\\\]" ],
+	testMatch: [ "**/__tests__/**/*.[jt]s?(x)" ],
 };

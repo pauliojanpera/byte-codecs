@@ -9,6 +9,6 @@ export default {
 		},
 	},
 	extensionsToTreatAsEsm: ['.ts'],
-	modulePathIgnorePatterns: [ "<rootDir>[/\\\\](\.dist|\.static|node_modules)[/\\\\]" ],
+	modulePathIgnorePatterns: [ "<rootDir>[/\\\\](dist|assets|node_modules)[/\\\\]" ],
 	testMatch: [ "**/__tests__/**/*.[jt]s?(x)" ],
 };
