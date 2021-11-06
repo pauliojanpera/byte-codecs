@@ -1,0 +1,33 @@
+{
+	"name": "@pauliojanpera/byte-codecs",
+	"description": "Some 8-bit byte based codecs",
+	"author": {
+		"name": "Pauli Ojanperä",
+		"email": "byte-codec@miettii.net"
+	},
+	"copyright": "Pauli Ojanperä",
+	"license": "MIT",
+	"version": "0.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pauliojanpera/byte-codecs.git"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "if [ ! -d .verdaccio-store ] ; then if [ ! -d ~/.verdaccio-store ] ; then mkdir ~/.verdaccio-store ; fi ; ln -s ~/.verdaccio-store ; fi && pnpm verdaccio --config ./verdaccio.yaml",
+		"test": "NODE_OPTIONS=--experimental-vm-modules pnpm jest"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.0.2",
+		"@types/node": "^16.11.6",
+		"fs-extra": "^10.0.0",
+		"jest": "^27.3.1",
+		"jest-environment-jsdom": "^27.3.1",
+		"ts-jest": "^27.0.7",
+		"typescript": "^4.4.4"
+	},
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	]
+}

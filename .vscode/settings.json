@@ -1,0 +1,4 @@
+{
+	"jest.jestCommandLine": "NODE_OPTIONS=--experimental-vm-modules pnpm jest",
+	"workbench.panel.defaultLocation": "right"
+}
